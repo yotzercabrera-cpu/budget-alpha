@@ -1,0 +1,32 @@
+---
+import type { Listing } from '../lib/listings';
+import { annualEquivalent, categoryLabel, priceLabel, searchBlob } from '../lib/listings';
+
+interface Props {
+  listing: Listing;
+}
+
+const { listing } = Astro.props;
+const { data } = listing;
+---
+
+<a
+  class="card"
+  href={`/listings/${data.slug}/`}
+  data-category={data.category}
+  data-search={searchBlob(listing)}
+>
+  <div class="card-top">
+    <span class="badge">{categoryLabel(data.category)}</span>
+    {data.featured && <span class="badge featured">Featured</span>}
+  </div>
+  <h2 class="card-name">{data.name}</h2>
+  <p>{data.tagline}</p>
+  <div class="meta-row">
+    <span class="price">{priceLabel(data)}</span>
+    {annualEquivalent(data) && <span class="muted">{annualEquivalent(data)}</span>}
+  </div>
+  <div class="card-tags">
+    {data.tags.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+</a>

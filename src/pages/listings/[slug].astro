@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+import {
+  annualEquivalent,
+  categoryLabel,
+  formatUsd,
+  priceLabel,
+  qualifiesForDirectory,
+} from '../../lib/listings';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const listings = await getCollection('listings');
+  return listings.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'listings'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { data } = entry;
+const reviewed = data.lastReviewed.toISOString().slice(0, 10);
+---
+
+<Layout title={data.name} description={data.tagline}>
+  <article>
+    <header class="wrap listing-hero">
+      <p class="crumb"><a href="/">All listings</a> / {categoryLabel(data.category)}</p>
+      <p class="kicker">{data.featured ? 'Featured · ' : ''}{categoryLabel(data.category)}</p>
+      <h1>{data.name}</h1>
+      <p class="lede">{data.tagline}</p>
+      <div class="rule-banner">
+        <span class="pill">{priceLabel(data)}</span>
+        {annualEquivalent(data) && <span class="pill">{annualEquivalent(data)}</span>}
+        <span class="pill">Reviewed {reviewed}</span>
+        <span class="pill">{qualifiesForDirectory(data) ? 'Inside the cap' : 'Check price rule'}</span>
+      </div>
+    </header>
+
+    <div class="wrap listing-layout">
+      <div class="prose">
+        <Content />
+      </div>
+      <aside class="side">
+        <section class="side-card">
+          <h2>Price</h2>
+          <p class="price">{priceLabel(data)}</p>
+          {
+            data.priceAnnual != null && (
+              <p class="muted">Annual: {formatUsd(data.priceAnnual)}</p>
+            )
+          }
+          {
+            data.priceMonthly != null && data.priceAnnual != null && (
+              <p class="muted">
+                Twelve monthly charges would be {formatUsd(Number((data.priceMonthly * 12).toFixed(2)))}.
+              </p>
+            )
+          }
+          <p>{data.priceNotes}</p>
+          <a class="cta" href={data.affiliateUrl} rel="nofollow sponsored">Go via affiliate placeholder</a>
+          <a class="cta secondary" href={data.websiteUrl}>Official site</a>
+          <p class="muted">Placeholder affiliate URL: {data.affiliateUrl}</p>
+        </section>
+        <section class="side-card">
+          <h2>Best for</h2>
+          <p>{data.bestFor}</p>
+        </section>
+        <section class="side-card">
+          <h2>What you get</h2>
+          <ul>
+            {data.whatYouGet.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <section class="side-card">
+          <h2>Verdict</h2>
+          <p>{data.verdict}</p>
+        </section>
+        <section class="side-card gotcha">
+          <h2>Renewal gotchas</h2>
+          <p>{data.renewalGotchas}</p>
+        </section>
+        <p class="muted">
+          {site.name} price rule: ≤ ${site.priceCapMonthly}/mo or ≤ ~${site.priceCapAnnual}/yr at the
+          reviewed retail rate, judged on renewal when intro and renewal differ.
+        </p>
+      </aside>
+    </div>
+  </article>
+</Layout>

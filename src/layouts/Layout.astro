@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = site.description } = Astro.props;
+const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.tagline}`;
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">{site.mark}</span>
+          <span class="brand-text">
+            <strong>{site.name}</strong>
+            <em>Directory</em>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/" aria-current={path === '/' ? 'page' : undefined}>Listings</a>
+          <a href="/about" aria-current={path.startsWith('/about') ? 'page' : undefined}>Methodology</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="footer-brand">{site.mark} {site.name}</p>
+          <p class="lede">{site.priceRule}</p>
+        </div>
+        <div>
+          <p class="kicker">Disclosure</p>
+          <p>{site.disclosure}</p>
+        </div>
+        <div class="footer-meta">
+          <a href="/about">How we pick and price</a>
+          <p>Last directory pass: {site.lastReviewedLabel}</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+
+<Layout title="Methodology" description={`How ${site.name} chooses listings, prices them, and handles affiliates.`}>
+  <section class="wrap page-hero">
+    <p class="kicker">About / methodology</p>
+    <h1>How the directory is kept honest.</h1>
+    <p class="lede">
+      {site.name} is a static catalog, not a broker and not a performance service. These rules are
+      the product.
+    </p>
+  </section>
+
+  <div class="wrap about">
+    <div class="about-grid">
+      <section class="about-card">
+        <h2>Hard price rule</h2>
+        <p>{site.priceRule}</p>
+        <p>
+          Today that means ≤ ${site.priceCapMonthly} per month or ≤ about ${site.priceCapAnnual} per
+          year on the retail SKU named in the listing. A first-year $199 that renews at $249 can
+          still qualify if $249 is under the annual cap. A $20 intro that renews at $79/month does
+          not, even if the landing page looks cheap.
+        </p>
+      </section>
+      <section class="about-card">
+        <h2>Intro versus renewal</h2>
+        <p>
+          Every listing has a <strong>renewal gotchas</strong> field. Trials that convert, Substack
+          grandfathering, holiday “special prices,” and first-year Morningstar-style promos are
+          called out in words. If we cannot tell whether a cheaper number is the ongoing rate, we
+          say so and tell you to read checkout.
+        </p>
+      </section>
+      <section class="about-card">
+        <h2>No invented performance</h2>
+        <p>
+          We will describe what a product is for and what it is not. We will not fabricate
+          backtests, win rates, subscriber returns, or “this paid for itself in one trade.” Model
+          outputs (Snowflakes, stars, fair values, heat maps) are treated as presentations of data
+          or opinion, not as evidence that you will beat an index.
+        </p>
+      </section>
+      <section class="about-card">
+        <h2>What we list</h2>
+        <p>
+          Tools (screeners, charting, fundamentals, fund research) and newsletters, plus a few
+          products that are both. Coverage in this build is US-retail-shaped: Finviz Elite, Stock
+          Rover Premium, TradingView Essential, TIKR Plus, Koyfin Plus, Simply Wall St Premium,
+          Finimize, The Diff, Net Interest, The Overshoot, Behind the Balance Sheet, and Morningstar
+          Investor. Higher SKUs from the same vendors (Premium Plus, Direct, Advisor) are mentioned
+          only to keep you from buying the wrong invoice.
+        </p>
+      </section>
+      <section class="about-card">
+        <h2>Sources and dates</h2>
+        <p>
+          Prices are logged with a <code>lastReviewed</code> date and notes pointing at public plan
+          pages, vendor posts, or widely cited 2026 roundups. Vendor pages that hide dollars behind
+          checkout get a nullable annual field rather than a guessed total (see Koyfin Plus). When
+          public sources disagree by a few dollars, we say that.
+        </p>
+      </section>
+      <section class="about-card">
+        <h2>Affiliates and disclosure</h2>
+        <p>
+          Outbound “go” links use placeholders of the form <code>https://example.com/go/{'{slug}'}</code>.
+          They are marked <code>rel="nofollow sponsored"</code>. If a real program is attached later,
+          the disclosure in the footer still applies: we may earn a commission; we are not your
+          adviser; confirm prices yourself.
+        </p>
+        <p>{site.disclosure}</p>
+      </section>
+    </div>
+  </div>
+</Layout>
