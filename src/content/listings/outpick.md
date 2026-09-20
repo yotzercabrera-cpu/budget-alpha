@@ -9,7 +9,7 @@ priceNotes: "Single plan only: $250/year flat (~$20.83/mo). No monthly option ad
 bestFor: "Long-horizon investors who want full theses (not trade alerts) and will pay annually for research they can audit against a published book."
 whatYouGet:
   - Biweekly high-conviction research notes across ~3,600 US-listed stocks
-  - Full theses: business case, figures, risks, and falsifiers — not ticker pings
+  - "Full theses: business case, figures, risks, and falsifiers — not ticker pings"
   - Live example portfolio with notes on opens, trims, and closes (including losers)
   - Free weekly Monday model note (no membership picks in that free read)
   - Explicit non-trading stance — no entry/exit alerts or timing signals
