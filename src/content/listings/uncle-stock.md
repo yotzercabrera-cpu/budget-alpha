@@ -10,9 +10,9 @@ bestFor: "DIY fundamental investors who want a metric-heavy global screener (and
 whatYouGet:
   - Fundamental screener across 100,000+ stocks with 2,000+ metrics and decades of history (marketed)
   - Scoring / intrinsic-value style models (Buffett, Graham, Lynch, Greenblatt, Piotroski, DCF variants — per site)
-  - Bronze: market screening, saved/shared screens, one stock list, advice/scores/price-target access
-  - Silver adds: save own screens, backtesting (yearly rebalance), interactive chart, multi-metric sort, personal columns
-  - Gold adds: industry median compares, CSV export, multiple lists/columns, positions, alerts, portfolio return, finer backtest rebalance
+  - "Bronze: market screening, saved/shared screens, one stock list, advice/scores/price-target access"
+  - "Silver adds: save own screens, backtesting (yearly rebalance), interactive chart, multi-metric sort, personal columns"
+  - "Gold adds: industry median compares, CSV export, multiple lists/columns, positions, alerts, portfolio return, finer backtest rebalance"
   - 2-week free trial; free limited company views; AI Agent (MCP) marketed as free with a daily search cap
 verdict: "Clean Budget Alpha tool fit. Bronze ($20/$130) is the honest entry list price. Silver stays under the monthly cap; Gold’s $60/mo sticker is over $50/mo but $350/yr still clears the soft annual line — we say so instead of hiding it. Independent screener, not a tips newsletter. No intro-then-jump bait on the public plans. We do not endorse backtest edge or testimonial performance claims."
 renewalGotchas: "No bait intro rate on the public plans — $20/$35/$60 monthly and $130/$210/$350 yearly are the listed recurring prices (USD). Annual saves ~45–51% vs monthly. 2-week free trial; if you do not subscribe after trial, no cancel needed. Cancel anytime; access continues through the paid period. VAT may be included depending on location. 'Prices shown are pre-discount' — confirm checkout total. Prefer annual Gold or stay on Bronze/Silver if you want monthly billing under the $50 comfort line."
