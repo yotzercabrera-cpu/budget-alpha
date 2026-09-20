@@ -26,6 +26,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { data } = entry;
 const reviewed = data.lastReviewed.toISOString().slice(0, 10);
+const isPlaceholderAffiliate = data.affiliateUrl.includes('example.com');
 ---
 
 <Layout title={data.name} description={data.tagline}>
@@ -64,9 +65,17 @@ const reviewed = data.lastReviewed.toISOString().slice(0, 10);
             )
           }
           <p>{data.priceNotes}</p>
-          <a class="cta" href={data.affiliateUrl} rel="nofollow sponsored">Go via affiliate placeholder</a>
+          <a class="cta" href={data.affiliateUrl} rel="nofollow sponsored">
+            {isPlaceholderAffiliate ? 'Go via affiliate placeholder' : 'Go via affiliate link'}
+          </a>
           <a class="cta secondary" href={data.websiteUrl}>Official site</a>
-          <p class="muted">Placeholder affiliate URL: {data.affiliateUrl}</p>
+          {
+            isPlaceholderAffiliate ? (
+              <p class="muted">Placeholder affiliate URL: {data.affiliateUrl}</p>
+            ) : (
+              <p class="muted">Affiliate link may earn {site.name} a commission.</p>
+            )
+          }
         </section>
         <section class="side-card">
           <h2>Best for</h2>

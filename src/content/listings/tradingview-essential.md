@@ -15,7 +15,7 @@ whatYouGet:
   - Web, desktop, and mobile sync
 verdict: "Essential is the honest first upgrade if you actually sit on charts. It does not make you a better trader and it does not include extra exchange real-time feeds, which are often a separate bill. Stay on Basic if you only glance at a daily candle."
 renewalGotchas: "Annual billing is a recurring year, not automatically a locked-forever promo. Holiday and \"special price\" checkouts may be intro-style discounts — read whether the next charge is the special or the public list price. Extra market-data subscriptions renew separately and can exceed the tool fee. Monthly plans generally are not refundable; annual refunds have a short window."
-affiliateUrl: https://example.com/go/tradingview-essential
+affiliateUrl: https://www.tradingview.com/budget-alpha?aff_id=1171176
 websiteUrl: https://www.tradingview.com/pricing/
 featured: true
 tags:

@@ -11,7 +11,7 @@ export const site = {
     'A listing qualifies only if the retail plan we reviewed is ≤ $50 per month or ≤ about $500 per year. Intro discounts do not count unless the renewal rate also clears the cap.',
   lastReviewedLabel: '20 September 2026',
   disclosure:
-    'Some outbound links are affiliate placeholders (example.com) and may earn Budget Alpha a commission if a program is later attached. We are not a registered investment adviser. Nothing on this site is a recommendation to buy, sell, or hold any security, fund, or subscription. Prices and plan names change; confirm intro versus renewal terms at checkout.',
+    'Some outbound links are affiliate links and may earn Budget Alpha a commission. Other listings still use placeholder URLs (example.com) until a program is attached. We are not a registered investment adviser. Nothing on this site is a recommendation to buy, sell, or hold any security, fund, or subscription. Prices and plan names change; confirm intro versus renewal terms at checkout.',
 } as const;
 
 export type Site = typeof site;
