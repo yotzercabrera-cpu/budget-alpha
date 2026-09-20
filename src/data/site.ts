@@ -1,6 +1,7 @@
 export const site = {
   name: 'Budget Alpha',
   mark: 'α',
+  url: 'https://budget-alpha.netlify.app',
   tagline: 'Research that stays under $50 a month.',
   description:
     'A directory of investing newsletters and research tools priced at or under $50 per month, or about $500 per year. We flag intro rates versus renewal prices and do not invent performance claims.',
