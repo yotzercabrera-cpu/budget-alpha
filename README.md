@@ -9,7 +9,7 @@ This repository is set up for **Netlify continuous deploys** from `main` (`npm r
 - Intro discounts do not qualify a product unless the **renewal** rate also clears the cap.
 - Listings call out trial conversion, grandfathering, and first-year promos.
 - No invented performance claims (no fake backtests or “paid for itself” copy).
-- Affiliate URLs are placeholders (`https://example.com/go/{slug}`) except where a live program is attached (TradingView Essential).
+- Affiliate URLs are placeholders (`https://example.com/go/{slug}`) except where a live program is attached (Finviz Elite, TradingView Essential).
 
 Brand copy lives in `src/data/site.ts`. Listings live in `src/content/listings/*.md`.
 

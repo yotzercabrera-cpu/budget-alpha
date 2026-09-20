@@ -15,7 +15,7 @@ whatYouGet:
   - Ad-free Elite interface
 verdict: "Elite is one of the cheaper ways to get a real-time US screener and heat map. It is not a fundamental research workstation, and it does not replace a broker or a charting platform. Use it if speed of overview matters more than 10-year financial models."
 renewalGotchas: "Trial auto-converts after 7 days. Monthly and annual plans auto-renew at the then-current Elite rate. Cancel before the trial ends if you do not want to be charged. Confirm whether any promotional checkout price is first-term only."
-affiliateUrl: https://example.com/go/finviz-elite
+affiliateUrl: https://finviz.com/?affilId=847375095
 websiteUrl: https://finviz.com/elite/
 featured: true
 tags:
